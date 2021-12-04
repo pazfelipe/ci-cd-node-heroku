@@ -35,11 +35,11 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - uses: actions/checkout@v2
-      - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
-
       - name: Installing dependencies
         run: npm install
 
+      - uses: actions/checkout@v2
+      - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
           threshold: 80 # optional parameter
           test-script: npm run coverage
