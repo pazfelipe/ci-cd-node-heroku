@@ -7,6 +7,14 @@ app.get('/', (req, res) => {
   res.send('Mudou tudo ...!');
 });
 
+app.get('/coverage', (req, res) => {
+  res.send('Sem cobertura!');
+});
+
+app.post('/coverage', (req, res) => {
+  res.send('Sem cobertura!');
+});
+
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
