@@ -40,6 +40,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           threshold: 80 # optional parameter
+          test-script: npm run coverage
 
   deploy:
     needs: coverage
