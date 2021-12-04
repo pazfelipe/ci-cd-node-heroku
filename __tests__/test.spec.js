@@ -10,6 +10,6 @@ describe('GET /', () => {
   it('responds with Hello World', done => {
     request(app)
       .get('/')
-      .expect(200, 'Hello World and a new world!', done);
+      .expect(200, 'Mudou tudo ...!', done);
   });
 });
