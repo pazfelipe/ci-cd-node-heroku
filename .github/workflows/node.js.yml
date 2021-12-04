@@ -30,14 +30,15 @@ jobs:
       - run: npm test
 
   coverage:
+    needs: build
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
           # github-token: ${{ secrets.GITHUB_TOKEN }}
-            threshold: 80 # optional parameter
+          threshold: 80 # optional parameter
 
   deploy:
     needs: coverage
